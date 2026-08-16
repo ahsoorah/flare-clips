@@ -1,0 +1,8 @@
+cat << 'EOF' > .gitignore
+node_modules/
+.env
+.env.local
+.wrangler/
+dist/
+*.log
+EOF
