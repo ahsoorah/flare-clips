@@ -35,7 +35,16 @@ Cloudflare worker API (api.suriyah.dev)
     Zero-Egress Hosting: Direct object delivery via Cloudflare R2 custom domain routes.
 
     Optimized Video Delivery: Streamlined for Discord embed playback and web sharing.
+---
+## Local Ingestion Daemon (`clip-uploader.sh`)
 
+Running locally on Fedora Linux, this background script utilizes `inotifywait` to monitor a folder on my machine in the [Vice](https://github.com/eklonofficial/Vice) capture directory in real-time. Upon detecting a completed video write (`close_write` or `moved_to`), it automatically:
+1. Validates the file extension (`.mp4`, `.mkv`, etc.)
+2. Pushes the raw video file straight to Cloudflare R2 using the S3-compatible API
+3. Automatically copies the direct CDN link to the Wayland clipboard via `wl-copy`
+4. Triggers a native KDE Plasma desktop notification (`notify-send`) confirming the upload
+
+---
 # Setup & Deployment
 ---
 ## 1. Prerequisites
