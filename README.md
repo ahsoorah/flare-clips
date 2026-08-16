@@ -1,6 +1,6 @@
 # flare-clips 
 
-A lightweight, serverless media API built to manage gameplay clips and videos. This worker acts as the secure backend for a web dashboard, hooking into Cloudflare R2 storage where clips are automatically ingested via a custom Linux (Fedora) folder-watching daemon directly from Vice.
+A lightweight, serverless media API built to manage gameplay clips and videos. This worker acts as the secure backend for a web dashboard, hooking into Cloudflare R2 storage where clips are automatically ingested via a custom Linux (Fedora) folder-watching daemon directly from [Vice](https://github.com/eklonofficial/Vice).
 ---
 
 ## Architecture Overview
