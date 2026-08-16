@@ -5,14 +5,14 @@ A lightweight, serverless media API built to manage gameplay clips and videos. T
 
 ## Architecture Overview
 
-## 🏗️ Architecture Overview
-
+```text
 [Ingestion Phase]
 Local Linux Environment (Fedora)
     ├── Vice (Captures 1440p gameplay clips)
     └── Custom Background Daemon (Watches folder & auto-uploads)
              │
              ▼  [Direct PUT]
+
 [Storage & Delivery Phase]
 Cloudflare R2 Storage (vice-clips)
              │
@@ -25,7 +25,7 @@ Web Dashboard (manager.suriyah.dev)
              ▼  [GET / DELETE with `x-api-key`]
 Cloudflare Worker API (api.suriyah.dev)
 
-
+```
 ---
 ## Features
 ---
