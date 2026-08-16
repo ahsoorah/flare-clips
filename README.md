@@ -5,10 +5,12 @@ A lightweight, serverless media API built to manage gameplay clips and videos. T
 
 ## Architecture Overview
 
+## 🏗️ Architecture Overview
+
 [Ingestion Phase]
-Local linux environment (Fedora)
-    ├── Vice (Configured to capture 1440p gameplay footage)
-    └── Custom background daemon (Watches folder & auto uploads)
+Local Linux Environment (Fedora)
+    ├── Vice (Captures 1440p gameplay clips)
+    └── Custom Background Daemon (Watches folder & auto-uploads)
              │
              ▼  [Direct PUT]
 [Storage & Delivery Phase]
