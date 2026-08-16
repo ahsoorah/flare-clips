@@ -54,11 +54,11 @@ Public Custom Domain (clips.domain.dev / direct MP4)
 
 
 ## 3. Deploy
-             #Copy and configure the template
-             cp wrangler.toml.example wrangler.toml
+          #Copy and configure the template
+          cp wrangler.toml.example wrangler.toml
 
-             #Deploy Worker to the edge
-             wrangler deploy
+          #Deploy Worker to the edge
+          wrangler deploy
 
 
 ## 4: Commit and Push
