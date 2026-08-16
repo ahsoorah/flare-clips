@@ -41,7 +41,7 @@ Public Custom Domain (clips.domain.dev / direct MP4)
 
     Wrangler CLI installed (npm install -g wrangler)
 
---
+
 
 ## 2. Configure Cloudflare Resources
 
@@ -52,14 +52,14 @@ Public Custom Domain (clips.domain.dev / direct MP4)
     Set your secret API key:
     wrangler secret put API_KEY
 
---
+
 ## 3. Deploy
    #Copy and configure the template
    cp wrangler.toml.example wrangler.toml
 
    #Deploy Worker to the edge
    wrangler deploy
---
+
 
 ## 4: Commit and Push
 
