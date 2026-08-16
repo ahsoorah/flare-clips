@@ -1,26 +1,29 @@
 # flare-clips 
 
-A lightweight, serverless media pipeline for uploading, securing, and serving high-quality gameplay clips and videos via Cloudflare's edge network.
-
+A lightweight, serverless media API built to manage gameplay clips and videos. This worker acts as the secure backend for a web dashboard, hooking into Cloudflare R2 storage where clips are automatically ingested via a custom Linux (Fedora) folder-watching daemon directly from Vice.
 ---
 
 ## Architecture Overview
 
-```text
-Web Dashboard (manager.suriyah.dev)
-          │
-          ▼  [GET / DELETE with `x-api-key`]
-Cloudflare Worker API (api.suriyah.dev)
-    ├── CORS Validation 
-    ├── Token Authentication (`x-api-key`)
-    └── R2 Binding (`env.BUCKET.list()` & `env.BUCKET.delete()`)
-          │
-          ▼  [Manage Media]
+[Ingestion Phase]
+Local linux environment (Fedora)
+    ├── Vice (Configured to capture 1440p gameplay footage)
+    └── Custom background daemon (Watches folder & auto uploads)
+             │
+             ▼  [Direct PUT]
+[Storage & Delivery Phase]
 Cloudflare R2 Storage (vice-clips)
-          │
-          ▼  [Direct CDN Delivery]
+             │
+             ▼  [Direct CDN Delivery]
 Public Custom Domain (clips.suriyah.dev / direct MP4)
-```
+
+[Management Phase]
+Web Dashboard (manager.suriyah.dev)
+             │
+             ▼  [GET / DELETE with `x-api-key`]
+Cloudflare Worker API (api.suriyah.dev)
+
+
 ---
 ## Features
 ---
