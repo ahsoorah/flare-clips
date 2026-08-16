@@ -5,21 +5,21 @@ A lightweight, serverless media pipeline for uploading, securing, and serving hi
 ---
 
 ## Architecture Overview
----
 
 ```text
-Local Client (FFmpeg / Script)
+Web Dashboard (manager.suriyah.dev)
           │
-          ▼  [POST with Bearer Auth]
-Cloudflare Worker API (api.domain.dev)
-    ├── Token Authentication (`API_KEY`)
-    └── Rate Limiting (`Workers KV`)
+          ▼  [GET / DELETE with `x-api-key`]
+Cloudflare Worker API (api.suriyah.dev)
+    ├── CORS Validation 
+    ├── Token Authentication (`x-api-key`)
+    └── R2 Binding (`env.BUCKET.list()` & `env.BUCKET.delete()`)
           │
-          ▼  [Put Object]
+          ▼  [Manage Media]
 Cloudflare R2 Storage (vice-clips)
           │
-          ▼  [Direct CDN Delivery / Zero Egress]
-Public Custom Domain (clips.domain.dev / direct MP4)
+          ▼  [Direct CDN Delivery]
+Public Custom Domain (clips.suriyah.dev / direct MP4)
 ```
 ---
 ## Features
@@ -54,11 +54,11 @@ Public Custom Domain (clips.domain.dev / direct MP4)
 
 
 ## 3. Deploy
-          #Copy and configure the template
-          cp wrangler.toml.example wrangler.toml
+    #Copy and configure the template
+    cp wrangler.toml.example wrangler.toml
 
-          #Deploy Worker to the edge
-          wrangler deploy
+    #Deploy Worker to the edge
+    wrangler deploy
 
 
 ## 4: Commit and Push
