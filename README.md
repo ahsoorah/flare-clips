@@ -7,9 +7,9 @@ A lightweight, serverless media API built to manage gameplay clips and videos. T
 
 ```text
 [Ingestion Phase]
-Local Linux Environment (Fedora)
-    ├── Vice (Captures 1440p gameplay clips)
-    └── Custom Background Daemon (Watches folder & auto-uploads)
+Local Linux environment (Fedora)
+    ├── Vice (Configured to record 1440p gameplay footage)
+    └── Custom background daemon (Watches folder & auto uploads)
              │
              ▼  [Direct PUT]
 
@@ -17,13 +17,13 @@ Local Linux Environment (Fedora)
 Cloudflare R2 Storage (vice-clips)
              │
              ▼  [Direct CDN Delivery]
-Public Custom Domain (clips.suriyah.dev / direct MP4)
+Public custom domain (clips.suriyah.dev / direct MP4)
 
 [Management Phase]
-Web Dashboard (manager.suriyah.dev)
+Web dashboard (manager.suriyah.dev)
              │
              ▼  [GET / DELETE with `x-api-key`]
-Cloudflare Worker API (api.suriyah.dev)
+Cloudflare worker API (api.suriyah.dev)
 
 ```
 ---
