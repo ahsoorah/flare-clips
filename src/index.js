@@ -3,7 +3,7 @@ export default {
     const url = new URL(request.url);
 
     const origin = request.headers.get("Origin");
-    let allowedOrigin = "https://manager.suriyah.dev";
+    let allowedOrigin = "https://manager.yourdomain.com";
     if (origin === "http://localhost:5173" || origin === "http://localhost:5174") {
       allowedOrigin = origin;
     }
@@ -29,7 +29,7 @@ export default {
         name: obj.key,
         size: obj.size,
         uploaded: obj.uploaded,
-        url: `https://clips.suriyah.dev/${obj.key}`
+        url: `https://clips.yourdomain.com/${obj.key}`
       }));
       return Response.json(clips, { headers: corsHeaders });
     }
