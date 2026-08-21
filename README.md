@@ -17,13 +17,13 @@ Local Linux environment (Fedora)
 Cloudflare R2 Storage (vice-clips)
              │
              ▼  [Direct CDN Delivery]
-Public custom domain (clips.suriyah.dev / direct MP4)
+Public custom domain (clips.yourdomain.com / direct MP4)
 
 [Management Phase]
-Web dashboard (manager.suriyah.dev)
+Web dashboard (manager.yourdomain.com)
              │
              ▼  [GET / DELETE with `x-api-key`]
-Cloudflare worker API (api.suriyah.dev)
+Cloudflare worker API (api.yourdomain.com)
 
 ```
 ---
