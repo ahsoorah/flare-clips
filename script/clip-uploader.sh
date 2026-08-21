@@ -1,9 +1,9 @@
-# config
+# fedora daemon i made to run on my machine at startup
 WATCH_DIR="/home/USER/Videos/Vice/Uploads"
 BUCKET_NAME="vice-clips"
 ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:-your_account_id_here}"
 ENDPOINT_URL="https://${ACCOUNT_ID}.r2.cloudflarestorage.com"
-DOMAIN="clips.suriyah.dev"
+DOMAIN="clips.yourdomain.com"
 
 # ensure the upload directory exists
 mkdir -p "$WATCH_DIR"
